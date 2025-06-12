@@ -18,7 +18,7 @@ Boilerplate for different aspects of dev environment
 ## Wordpress
 - Coming soon
 
----
+
 
 ## Python
 ### Django
@@ -27,7 +27,7 @@ Boilerplate for different aspects of dev environment
 ### Flask
 - Coming soon
 
----
+
 
 # Front-End
 
@@ -40,7 +40,7 @@ Boilerplate for different aspects of dev environment
 ## Typescript
 - Coming soon
 
----
+
 
 # Database
 
@@ -53,5 +53,3 @@ Boilerplate for different aspects of dev environment
 ## Redis
 - Coming soon
 
-
-  
