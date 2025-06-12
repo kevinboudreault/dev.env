@@ -1,7 +1,7 @@
 Boilerplate for different aspects of dev environment
-- [Back-End](#bac-kend)
-- Front-End
-- Database
+- [Back-End](#back-kend)
+- [Front-End](#front-end)
+- [Database](#database)
 
 
 # Back-End
