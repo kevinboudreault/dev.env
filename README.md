@@ -1,6 +1,8 @@
-# Boilerplate for dev environment
+Boilerplate for different aspects of dev environment
+- Back-End
+- Front-End
+- Database
 
----
 
 # Back-End
 
