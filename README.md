@@ -1,6 +1,11 @@
 # Boilerplate for dev environment
 
-## Symfony
+---
+
+# Back-End
+
+## PHP
+### Symfony
 - Web App base
 - REST API base
 - Custom functions for debugging, logs and maintenance
@@ -10,3 +15,41 @@
 
 ## Wordpress
 - Coming soon
+
+---
+
+## Python
+### Django
+- Coming soon
+
+### Flask
+- Coming soon
+
+---
+
+# Front-End
+
+## VueJS
+- Coming soon
+
+## ReactJS
+- Coming soon
+
+## Typescript
+- Coming soon
+
+---
+
+# Database
+
+## MariaDB
+- Coming soon
+
+## MongoDB
+- Coming soon
+
+## Redis
+- Coming soon
+
+
+  
