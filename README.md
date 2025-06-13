@@ -13,7 +13,7 @@ Boilerplate for different aspects of dev environment
 - Custom functions for debugging, logs and maintenance
 
 ## Laravel
-- Coming soon
+- Web App base with Full-Stack [nginx,postgres,php,workspace]
 
 ## Wordpress
 - Coming soon
@@ -45,6 +45,9 @@ Boilerplate for different aspects of dev environment
 # Database
 
 ## MariaDB
+- Coming soon
+
+## PostgreSQL
 - Coming soon
 
 ## MongoDB
