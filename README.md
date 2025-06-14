@@ -7,20 +7,25 @@ Boilerplate for different aspects of dev environment
 # Back-End
 
 ## PHP
+### Vanilla
+- Development 7.4/8.4 base
+
 ### Symfony
 - Web App base
 - REST API base
 - Custom functions for debugging, logs and maintenance
 
-## Laravel
+### Laravel
 - Web App base with Full-Stack [nginx,postgres,php,workspace]
 
-## Wordpress
+### Wordpress
 - Coming soon
 
 
-
 ## Python
+### Vanilla
+- Coming soon
+  
 ### Django
 - Coming soon
 
@@ -31,28 +36,32 @@ Boilerplate for different aspects of dev environment
 
 # Front-End
 
-## VueJS
+## Javascript
+### Typescript
 - Coming soon
 
-## ReactJS
+### VueJS
 - Coming soon
 
-## Typescript
+### ReactJS
 - Coming soon
 
 
 
 # Database
 
-## MariaDB
+## SQL
+### MariaDB
 - Coming soon
 
-## PostgreSQL
+### PostgreSQL
 - Coming soon
 
-## MongoDB
+
+## NoSQL
+### MongoDB
 - Coming soon
 
-## Redis
+### Redis
 - Coming soon
 
