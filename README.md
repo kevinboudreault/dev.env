@@ -19,7 +19,7 @@ Boilerplate for different aspects of dev environment
 - Web App base with Full-Stack [nginx,postgres,php,workspace]
 
 ### Wordpress
-- Coming soon
+- Base WP Blog with DB
 
 
 ## Python
