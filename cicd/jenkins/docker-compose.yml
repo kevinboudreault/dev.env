@@ -1,0 +1,18 @@
+
+services:
+  jenkins:
+    restart: on-failure:10
+    image: jenkins/jenkins:latest
+    container_name: jenkins-dev
+    ports:
+      - 8099:8080
+    volumes:
+      - jenkins_data:/var/jenkins_home
+
+volumes:
+  jenkins_data:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: ./apps/jenkins
