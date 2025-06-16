@@ -72,4 +72,7 @@ Boilerplate for different aspects of dev environment
 
 ## Unit Test
 ### Jenkins
-- Base for app testing
+- Base for CI/CD & App testing
+
+### Gitlab CE
+- Base for CI/CD, git repos, issue tracking, Wiki, and more.
