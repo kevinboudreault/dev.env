@@ -2,7 +2,7 @@ Boilerplate for different aspects of dev environment
 - [Back-End](#back-kend)
 - [Front-End](#front-end)
 - [Database](#database)
-- [Testing](#testing)
+- [Continuous Integration & Continuous Delivery](#ci/cd)
 
 
 # Back-End
@@ -68,11 +68,12 @@ Boilerplate for different aspects of dev environment
 
 
 
-# Testing
+# CI/CD
 
-## Unit Test
+## Continuous Integration Tools
 ### Jenkins
-- Base for CI/CD & App testing
+- Base for App testing
 
+## Source code management
 ### Gitlab CE
-- Base for CI/CD, git repos, issue tracking, Wiki, and more.
+- Base for git repos, issue tracking, CI/CD, Wiki, and more.
