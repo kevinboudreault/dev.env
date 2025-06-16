@@ -16,3 +16,7 @@ volumes:
       o: bind
       type: none
       device: ./apps/jenkins
+
+# Init temp password
+# docker compose exec jenkins /bin/bash
+# >cat /var/jenkins_home/secrets/initialAdminPassword
