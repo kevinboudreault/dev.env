@@ -86,8 +86,8 @@ Boilerplate for different aspects of dev environment
 
 
 <p align="left">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-plain-wordmark.svg" width="20%" heigh="20%" align="center" >
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-plain-wordmark.svg" width="20%" heigh="20%" align="center" >
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-plain-wordmark.svg" width="15%" heigh="15%" align="center" >
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-plain-wordmark.svg" width="15%" heigh="15%" align="center" >
 </p>
 
 ##### Coming soon
@@ -97,8 +97,8 @@ Boilerplate for different aspects of dev environment
 ---
 
 <p align="left">
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-plain-wordmark.svg"  width="20%" heigh="20%" align="center" >
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-plain-wordmark.svg" width="20%" heigh="20%" align="center" >
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-plain-wordmark.svg"  width="15%" heigh="15%" align="center" >
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-plain-wordmark.svg" width="15%" heigh="15%" align="center" >
 </p>
 
 ##### Coming soon
@@ -118,8 +118,8 @@ Boilerplate for different aspects of dev environment
 ### Continuous Integration Tools
 
 <p align="left">
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" width="30%" heigh="30%" align="center" >
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original-wordmark.svg" width="30%" heigh="30%" align="center" >
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" width="15%" heigh="15%" align="center" >
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original-wordmark.svg" width="15%" heigh="15%" align="center" >
 </p>
 
  [Jenkins](https://www.jenkins.io/doc/book/)
@@ -137,6 +137,9 @@ Boilerplate for different aspects of dev environment
 
 ---
 
+<p align="left">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ansible/ansible-original-wordmark.svg" width="30%" heigh="30%" align="center">
+</p>
 
 [Ansible](https://docs.ansible.com/ansible/latest/collections/community/docker/index.html)
 - Base for agentless workflow automation + playbook yaml
