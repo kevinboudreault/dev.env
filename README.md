@@ -5,10 +5,15 @@ Boilerplate for different aspects of dev environment
 - [CI / CD](#ci/cd)
 - [Automation](#automation)
 
+---
 
 # Back-End
 
-### PHP
+---
+
+
+
+ <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"  width="30%" heigh="30%" align="right">
 
 [Vanilla](https://www.php.net/docs.php)
 - Development 7.4/8.4 base
@@ -24,8 +29,9 @@ Boilerplate for different aspects of dev environment
 [Wordpress](https://wordpress.org/documentation/)
 - Base WP Blog with DB
 
+-----
 
-### Python
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="30%" heigh="30%" align="right" >
 
 ##### Coming soon
 - Vanilla
@@ -33,54 +39,81 @@ Boilerplate for different aspects of dev environment
 - Flask
 
 
+---
+
 # Front-End
 
-### Javascript
+---
+
+
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" width="30%" heigh="30%" align="right" >
 
 ##### Coming soon
 - Typescript
 - VueJS
 - ReactJS
 
-### Boilerplate 
+---
+
+<p align="left">
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain.svg" width="20%" heigh="20%" align="center" >
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain.svg" width="20%" heigh="20%" align="center" >
+</p>
 
 ##### Coming soon
-- CSS
-- HTML
+- CSS boilerplate
+- HTML boilerplate
 
-
+---
 
 # Database
 
-### SQL
+---
+
+<p align="left">
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-plain-wordmark.svg" width="20%" heigh="20%" align="center" >
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-plain-wordmark.svg" width="20%" heigh="20%" align="center" >
+</p>
 
 ##### Coming soon
 - MariaDB
 - PostgreSQL
 
+---
 
-### NoSQL
+<p align="left">
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-plain-wordmark.svg"  width="20%" heigh="20%" align="center" >
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-plain-wordmark.svg" width="20%" heigh="20%" align="center" >
+</p>
 
 ##### Coming soon
 - MongoDB
 - Redis
 
-
+---
 
 # CI/CD
 
+---
+
 ### Continuous Integration Tools
+
+<p align="center">
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" width="30%" heigh="30%" align="center" >
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original-wordmark.svg" width="30%" heigh="30%" align="center" >
+</p>
 
  [Jenkins](https://www.jenkins.io/doc/book/)
 - Base for App testing
 
-### Source code management
-
 [Gitlab CE](https://docs.gitlab.com/)
 - Base for git repos, issue tracking, CI/CD, Wiki, and more.
 
-
+---
 
 # Automation
+
+---
+
 [Ansible](https://docs.ansible.com/ansible/latest/collections/community/docker/index.html)
 - Base for agentless workflow automation + playbook yaml
