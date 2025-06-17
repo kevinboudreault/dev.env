@@ -12,8 +12,8 @@ Boilerplate for different aspects of dev environment
 ---
 
 
-<p>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"  width="30%" heigh="30%" align="right">
+<p align="left">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"  width="30%" heigh="30%" align="left">
 </p>
 
 [Vanilla](https://www.php.net/docs.php)
@@ -32,8 +32,8 @@ Boilerplate for different aspects of dev environment
 
 -----
 
-<p>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="30%" heigh="30%" align="right">
+<p align="left">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="30%" heigh="30%" align="left">
 </p>
 
 ##### Coming soon
@@ -48,8 +48,8 @@ Boilerplate for different aspects of dev environment
 
 ---
 
-<p>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" width="30%" heigh="30%" align="right">
+<p align="left">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" width="30%" heigh="30%" align="left">
 </p>
 
 ##### Coming soon
@@ -102,7 +102,7 @@ Boilerplate for different aspects of dev environment
 
 ### Continuous Integration Tools
 
-<p align="center">
+<p align="left">
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" width="30%" heigh="30%" align="center" >
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original-wordmark.svg" width="30%" heigh="30%" align="center" >
 </p>
