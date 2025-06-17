@@ -12,7 +12,7 @@ Boilerplate for different aspects of dev environment
 ---
 
 
-<p align="left">
+<p align="center" width="100%">
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"  width="30%" heigh="30%" align="left">
 </p>
 
