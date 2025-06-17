@@ -5,6 +5,9 @@ Boilerplate for different aspects of dev environment
 - [CI / CD](#ci/cd)
 - [Automation](#automation)
 
+
+
+
 ---
 
 # Back-End
@@ -41,11 +44,14 @@ Boilerplate for different aspects of dev environment
 - Flask
 
 
+
+
 ---
 
 # Front-End
 
 ---
+
 
 <p align="left">
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" width="30%" heigh="30%" align="center">
@@ -56,16 +62,21 @@ Boilerplate for different aspects of dev environment
 - VueJS
 - ReactJS
 
+
 ---
 
+
 <p align="left">
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain.svg" width="20%" heigh="20%" align="center">
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain.svg" width="20%" heigh="20%" align="center">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain.svg" width="20%" heigh="20%" align="center">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain.svg" width="20%" heigh="20%" align="center">
 </p>
 
 ##### Coming soon
 - CSS boilerplate
 - HTML boilerplate
+
+
+
 
 ---
 
@@ -73,9 +84,10 @@ Boilerplate for different aspects of dev environment
 
 ---
 
+
 <p align="left">
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-plain-wordmark.svg" width="20%" heigh="20%" align="center" >
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-plain-wordmark.svg" width="20%" heigh="20%" align="center" >
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-plain-wordmark.svg" width="20%" heigh="20%" align="center" >
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-plain-wordmark.svg" width="20%" heigh="20%" align="center" >
 </p>
 
 ##### Coming soon
@@ -93,11 +105,15 @@ Boilerplate for different aspects of dev environment
 - MongoDB
 - Redis
 
+
+
+
 ---
 
 # CI/CD
 
 ---
+
 
 ### Continuous Integration Tools
 
@@ -112,11 +128,15 @@ Boilerplate for different aspects of dev environment
 [Gitlab CE](https://docs.gitlab.com/)
 - Base for git repos, issue tracking, CI/CD, Wiki, and more.
 
+
+
+
 ---
 
 # Automation
 
 ---
+
 
 [Ansible](https://docs.ansible.com/ansible/latest/collections/community/docker/index.html)
 - Base for agentless workflow automation + playbook yaml
