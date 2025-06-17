@@ -12,8 +12,9 @@ Boilerplate for different aspects of dev environment
 ---
 
 
-
- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"  width="30%" heigh="30%" align="right">
+<p>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"  width="30%" heigh="30%" align="right">
+</p>
 
 [Vanilla](https://www.php.net/docs.php)
 - Development 7.4/8.4 base
@@ -31,7 +32,9 @@ Boilerplate for different aspects of dev environment
 
 -----
 
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="30%" heigh="30%" align="right" >
+<p>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="30%" heigh="30%" align="right">
+</p>
 
 ##### Coming soon
 - Vanilla
@@ -45,8 +48,9 @@ Boilerplate for different aspects of dev environment
 
 ---
 
-
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" width="30%" heigh="30%" align="right" >
+<p>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" width="30%" heigh="30%" align="right">
+</p>
 
 ##### Coming soon
 - Typescript
@@ -56,8 +60,8 @@ Boilerplate for different aspects of dev environment
 ---
 
 <p align="left">
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain.svg" width="20%" heigh="20%" align="center" >
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain.svg" width="20%" heigh="20%" align="center" >
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain.svg" width="20%" heigh="20%" align="center">
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain.svg" width="20%" heigh="20%" align="center">
 </p>
 
 ##### Coming soon
