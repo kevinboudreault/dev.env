@@ -2,78 +2,85 @@ Boilerplate for different aspects of dev environment
 - [Back-End](#back-kend)
 - [Front-End](#front-end)
 - [Database](#database)
-- [Continuous Integration & Continuous Delivery](#ci/cd)
+- [CI / CD](#ci/cd)
+- [Automation](#automation)
 
 
 # Back-End
 
-## PHP
-### Vanilla
+### PHP
+
+[Vanilla](https://www.php.net/docs.php)
 - Development 7.4/8.4 base
 
-### Symfony
+[Symfony](https://symfony.com/doc/current/index.html)
 - Web App base
 - REST API base
 - Custom functions for debugging, logs and maintenance
 
-### Laravel
+[Laravel](https://laravel.com/docs/12.x/installation)
 - Web App base with Full-Stack [nginx,postgres,php,workspace]
 
-### Wordpress
+[Wordpress](https://wordpress.org/documentation/)
 - Base WP Blog with DB
 
 
-## Python
-### Vanilla
-- Coming soon
-  
-### Django
-- Coming soon
+### Python
 
-### Flask
-- Coming soon
-
+##### Coming soon
+- Vanilla
+- Django
+- Flask
 
 
 # Front-End
 
-## Javascript
-### Typescript
-- Coming soon
+### Javascript
 
-### VueJS
-- Coming soon
+##### Coming soon
+- Typescript
+- VueJS
+- ReactJS
 
-### ReactJS
-- Coming soon
+### Boilerplate 
+
+##### Coming soon
+- CSS
+- HTML
 
 
 
 # Database
 
-## SQL
-### MariaDB
-- Coming soon
+### SQL
 
-### PostgreSQL
-- Coming soon
+##### Coming soon
+- MariaDB
+- PostgreSQL
 
 
-## NoSQL
-### MongoDB
-- Coming soon
+### NoSQL
 
-### Redis
-- Coming soon
+##### Coming soon
+- MongoDB
+- Redis
 
 
 
 # CI/CD
 
-## Continuous Integration Tools
-### Jenkins
+### Continuous Integration Tools
+
+ [Jenkins](https://www.jenkins.io/doc/book/)
 - Base for App testing
 
-## Source code management
-### Gitlab CE
+### Source code management
+
+[Gitlab CE](https://docs.gitlab.com/)
 - Base for git repos, issue tracking, CI/CD, Wiki, and more.
+
+
+
+# Automation
+[Ansible](https://docs.ansible.com/ansible/latest/collections/community/docker/index.html)
+- Base for agentless workflow automation + playbook yaml
