@@ -12,16 +12,15 @@ Boilerplate for different aspects of dev environment
 ---
 
 
-<p align="center" width="100%">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"  width="30%" heigh="30%" align="left">
+<p align="left">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"  width="30%" heigh="30%" align="center">
 </p>
 
 [Vanilla](https://www.php.net/docs.php)
 - Development 7.4/8.4 base
 
 [Symfony](https://symfony.com/doc/current/index.html)
-- Web App base
-- REST API base
+- Web App / REST API base
 - Custom functions for debugging, logs and maintenance
 
 [Laravel](https://laravel.com/docs/12.x/installation)
@@ -33,7 +32,7 @@ Boilerplate for different aspects of dev environment
 -----
 
 <p align="left">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="30%" heigh="30%" align="left">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="30%" heigh="30%" align="center">
 </p>
 
 ##### Coming soon
