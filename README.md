@@ -48,7 +48,7 @@ Boilerplate for different aspects of dev environment
 ---
 
 <p align="left">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" width="30%" heigh="30%" align="left">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" width="30%" heigh="30%" align="center">
 </p>
 
 ##### Coming soon
