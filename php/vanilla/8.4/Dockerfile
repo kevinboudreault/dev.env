@@ -3,30 +3,20 @@ FROM php:8.4-cli
 ARG UID=1000
 ARG GID=1000
 
-# Packages
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl \
-    unzip \
-    libpq-dev \
-    libonig-dev \
-    libssl-dev \
-    libxml2-dev \
-    libcurl4-openssl-dev \
-    libicu-dev \
-    libzip-dev \
-    && docker-php-ext-install -j$(nproc) \
-    pdo_mysql \
-    pdo_pgsql \
-    pgsql \
-    opcache \
-    intl \
-    zip \
-    bcmath \
-    soap
+# Dependencies
+RUN echo "force-unsafe-io" > etc/dpkg/dpkg.cfg.d/02apt-speedup \
+    && echo "Acquire::http {No-Cache=True;};" > /etc/apt/apt.conf.d/no-cache \
+    && apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends --quiet \
+        apt-transport-https curl git gnupg msmtp-mta mariadb-client openssh-client rsync unzip wget \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN pecl install redis \
-    && pecl install xdebug \
-    && docker-php-ext-enable xdebug
+# Extensions
+RUN extensions="amqp apcu ast bcmath bitset brotli bz2 calendar csv dba decimal ds enchant ev event excimer exif ffi ftp gd gearman gettext gmp gnupg grpc http igbinary imagick imap inotify intl json_post jsonpath ldap luasandbox lz4 lzf mailparse maxminddb md4c memcache memcached memprof mongodb msgpack mysqli oauth odbc opcache opentelemetry parle pcntl pcov pdo_dblib pdo_firebird pdo_mysql pdo_odbc pdo_pgsql pdo_sqlsrv pgsql php_trie pkcs11 pq protobuf pspell psr raphf rdkafka redis saxon seasclick shmop simdjson smbclient snappy snmp soap sockets solr spx sqlsrv ssh2 stomp sync sysvmsg sysvsem sysvshm tideways tidy timezonedb uploadprogress uuid uv vips wikidiff2 xdebug xhprof xlswriter xmldiff xmlrpc xpass xsl yac yaml yar zephir_parser zip zmq zookeeper zstd" \
+    && curl -sSLf -o /usr/local/bin/install-php-extensions https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions \
+    && chmod +x /usr/local/bin/install-php-extensions \
+    && install-php-extensions $extensions \
+    && for ext in $extensions; do rm -f /usr/local/etc/php/conf.d/*php-ext-$ext.ini; done
 
 # Composer    
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
@@ -54,8 +44,12 @@ ARG PHP_XDEBUG_MODE
 ARG PHP_XDEBUG_HOST
 ARG PHP_XDEBUG_LOG
 ARG PHP_XDEBUG_LOG_LEVEL
+ENV XDEBUG_VERSION=3.4.0
 
 RUN if [ "${PHP_XDEBUG_ENABLED}" = "true" ]; then \
+    curl -L https://xdebug.org/files/xdebug-$XDEBUG_VERSION.tgz | tar -zxf - \
+    mv xdebug-$XDEBUG_VERSION xdebug && \
+    pecl install xdebug-$XDEBUG_VERSION && \
     docker-php-ext-enable xdebug && \
     echo "xdebug.mode=${PHP_XDEBUG_MODE}" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && \
     echo "xdebug.log=${PHP_XDEBUG_LOG}" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && \
@@ -63,6 +57,11 @@ RUN if [ "${PHP_XDEBUG_ENABLED}" = "true" ]; then \
     echo "xdebug.client_host=${PHP_XDEBUG_HOST}" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini ; \
     echo "xdebug.start_with_request=yes" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini ; \
 fi
+
+#Cleanup
+RUN apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false \
+        apt-transport-https curl git gnupg msmtp-mta mariadb-client openssh-client rsync unzip wget \
+    && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Folder permission set
 RUN if getent group ${GID}; then \
@@ -77,4 +76,11 @@ RUN if getent group ${GID}; then \
 USER www
 
 COPY . /usr/src/myapp
+COPY msmtprc /etc/
+
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+
 WORKDIR /usr/src/myapp
+
+CMD ["php", "-a"]
