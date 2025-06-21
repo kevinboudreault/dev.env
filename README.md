@@ -32,6 +32,12 @@ Boilerplate for different aspects of dev environment
 [Wordpress](https://wordpress.org/documentation/)
 - Base WP Blog with DB
 
+[Vite + ReactJS](https://github.com/vitejs/vite/tree/main/packages/create-vite)
+- React Web App base with Full-Stack dev:
+	- [nginx,mariadb,php,redis,mailhog,phpmyadmin]
+ 	- [npm,composer,artisan]
+  	- [laravel-cron,laravel-queue,laravel-migrate-seed]
+
 -----
 
 <p align="left">
