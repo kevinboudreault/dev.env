@@ -47,8 +47,10 @@ Boilerplate for different aspects of dev environment
 [Vanilla](https://docs.python.org/3.12/py-modindex.html)
 - Development 3.6 [Alpine: virtual-env & postgres]
 
+[Django](https://docs.djangoproject.com/en/5.2/)
+- Development 3.6 [Alphine: Postgres & django plugins]
+  
 ##### Coming soon
-- Django
 - Flask
 
 
