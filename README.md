@@ -44,8 +44,10 @@ Boilerplate for different aspects of dev environment
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="30%" heigh="30%" align="center">
 </p>
 
+[Vanilla](https://docs.python.org/3.12/py-modindex.html)
+- Development 3.6 [Alpine: virtual-env & postgres]
+
 ##### Coming soon
-- Vanilla
 - Django
 - Flask
 
