@@ -1,0 +1,17 @@
+services:
+  web:
+    build: .
+    command: gunicorn -b 0.0.0.0:8000 appuser.wsgi:application
+    depends_on:
+      - postgres
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - 8800:8000
+    environment:
+      DATABASE_URL: postgres://appuser@postgres/appname
+  postgres:
+    image: postgres:9.6.2-alpine
+    environment:
+      POSTGRES_USER: appuser
+      POSTGRES_DB: appname
