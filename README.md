@@ -48,10 +48,10 @@ Boilerplate for different aspects of dev environment
 - Development 3.6 [Alpine: virtual-env & postgres]
 
 [Django](https://docs.djangoproject.com/en/5.2/)
-- Development 3.6 [Alphine: Postgres & django plugins]
+- Development 3.6 [Alpine: Postgres & django plugins]
 
 [Flask](https://pypi.org/project/Flask/)
-- Development 3.6 [Alphine: virtual-env & Postgres & Flask]
+- Development 3.6 [Alpine: virtual-env & Postgres & Flask]
 
 
 
