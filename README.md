@@ -49,9 +49,9 @@ Boilerplate for different aspects of dev environment
 
 [Django](https://docs.djangoproject.com/en/5.2/)
 - Development 3.6 [Alphine: Postgres & django plugins]
-  
-##### Coming soon
-- Flask
+
+[Flask](https://docs.djangoproject.com/en/5.2/](https://pypi.org/project/Flask/)
+- Development 3.6 [Alphine: virtual-env & Postgres & Flask]
 
 
 
