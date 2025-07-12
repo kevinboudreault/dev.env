@@ -1,0 +1,28 @@
+services:
+  db:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: mariadb
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+#    env_file:
+#     - ./mariadb.env
+    environment:
+      # https://dev.mysql.com/doc/refman/8.4/en/environment-variables.html
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DEBUG: ${MYSQL_DEBUG}
+      MYSQL_HOME: ${MYSQL_HOME}
+      MYSQL_HOST: ${MYSQL_HOST}
+      MYSQL_TCP_PORT: ${MYSQL_TCP_PORT}
+      MYSQL_UNIX_PORT: ${MYSQL_UNIX_PORT}
+      TZ: ${TZ}
+    restart: unless-stopped
+
+volumes:
+  mariadb_data:
