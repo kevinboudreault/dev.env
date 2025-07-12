@@ -100,8 +100,10 @@ Boilerplate for different aspects of dev environment
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-plain-wordmark.svg" width="15%" heigh="15%" align="center" >
 </p>
 
+[MariaDB](https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb)
+- Build image with entrypoint + healthcheck
+
 ##### Coming soon
-- MariaDB
 - PostgreSQL
 
 ---
