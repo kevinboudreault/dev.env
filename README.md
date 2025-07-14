@@ -103,8 +103,8 @@ Boilerplate for different aspects of dev environment
 [MariaDB](https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb)
 - Build image with entrypoint + healthcheck
 
-##### Coming soon
-- PostgreSQL
+[PostGreSQL](https://docs.docker.com/reference/samples/postgres/)
+- Build image with db init script
 
 ---
 
