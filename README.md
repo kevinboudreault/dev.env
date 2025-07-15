@@ -113,8 +113,11 @@ Boilerplate for different aspects of dev environment
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-plain-wordmark.svg" width="15%" heigh="15%" align="center" >
 </p>
 
+[MongoDB](https://www.mongodb.com/docs/)
+- Build base image with Mongo-Express container
+
 ##### Coming soon
-- MongoDB
+- InfluxDB
 - Redis
 
 
