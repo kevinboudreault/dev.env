@@ -1,0 +1,22 @@
+services:
+
+  mongo:
+    # build:
+    #   context: ./
+    #   dockerfile: Dockerfile
+    image: mongo:8.0.12-rc0-noble
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "$${MONGO_ROOT_USER:root}"
+      MONGO_INITDB_ROOT_PASSWORD: "$${MONGO_ROOT_PWD:tH!s!SpwD}"
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - ${MONGO_PORT}:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: "$${MONGO_EXP_USER:root}"
+      ME_CONFIG_MONGODB_ADMINPASSWORD: "$${MONGO_EXP_PWD:3x@mPL3}"
+      ME_CONFIG_MONGODB_URL: "mongodb://$${MONGO_EXP_USER:root}:$${MONGO_EXP_PWD:3x@mPL3}@mongo:27017/"
+      ME_CONFIG_BASICAUTH: false
