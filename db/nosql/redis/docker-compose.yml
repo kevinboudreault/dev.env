@@ -1,0 +1,10 @@
+services:
+  redis:  
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    command: redis-server /usr/local/etc/redis/redis.conf
+    volumes:
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
