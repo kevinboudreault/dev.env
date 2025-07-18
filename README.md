@@ -116,9 +116,11 @@ Boilerplate for different aspects of dev environment
 [MongoDB](https://www.mongodb.com/docs/)
 - Build base image with Mongo-Express container
 
+[Redis](https://redis.io/docs/latest/operate/oss_and_stack/management/config/)
+- Build base image container with config
+
 ##### Coming soon
 - InfluxDB
-- Redis
 
 
 
