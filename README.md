@@ -119,9 +119,9 @@ Boilerplate for different aspects of dev environment
 [Redis](https://redis.io/docs/latest/operate/oss_and_stack/management/config/)
 - Build base image container with config
 
-##### Coming soon
-- InfluxDB
 
+[InfluxDB](https://docs.influxdata.com/)
+- Build base image container with config
 
 
 
