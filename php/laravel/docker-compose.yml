@@ -66,8 +66,8 @@ services:
     ports:
       - "${POSTGRES_PORT:-5432}:5432"
     environment:
-      - POSTGRES_DB=portfolio
-      - POSTGRES_USER=laravel
+      - POSTGRES_DB="${LARAVEL_POSTGRES_DB:-app}"
+      - POSTGRES_USER="${LARAVEL_POSTGRES_USER:-laravel}"
       - POSTGRES_PASSWORD_FILE=/run/secrets/postgres-passwd
     env_file:
       - .env
