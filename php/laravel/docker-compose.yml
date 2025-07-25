@@ -66,13 +66,14 @@ services:
     ports:
       - "${POSTGRES_PORT:-5432}:5432"
     environment:
-      - POSTGRES_DB=${LARAVEL_POSTGRES_DB:-app}
-      - POSTGRES_USER=${LARAVEL_POSTGRES_USER:-laravel}
-      - POSTGRES_PASSWORD=${LARAVEL_POSTGRES_PASSWORD:-secret}
+      - POSTGRES_DB=portfolio
+      - POSTGRES_USER=laravel
+      - POSTGRES_PASSWORD_FILE=/run/secrets/postgres-passwd
     env_file:
       - .env
     volumes:
       - postgres-data-dev:/var/lib/postgresql/data
+      - ./postgres-passwd.secret:/run/secrets/postgres-passwd
     networks:
       - lrvl-dev
 
