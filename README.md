@@ -16,7 +16,7 @@ Boilerplate for different aspects of dev environment
 
 
 <p align="left">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"  width="30%" heigh="30%" align="center">
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"  width="30%" heigh="30%" align="center">
 </p>
 
 [Vanilla](https://www.php.net/docs.php)
@@ -41,7 +41,7 @@ Boilerplate for different aspects of dev environment
 -----
 
 <p align="left">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="30%" heigh="30%" align="center">
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="30%" heigh="30%" align="center">
 </p>
 
 [Vanilla](https://docs.python.org/3.12/py-modindex.html)
@@ -64,7 +64,7 @@ Boilerplate for different aspects of dev environment
 
 
 <p align="left">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" width="30%" heigh="30%" align="center">
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" width="30%" heigh="30%" align="center">
 </p>
 
 ##### Coming soon
@@ -77,8 +77,8 @@ Boilerplate for different aspects of dev environment
 
 
 <p align="left">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain.svg" width="20%" heigh="20%" align="center">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain.svg" width="20%" heigh="20%" align="center">
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain.svg" width="20%" heigh="20%" align="center">
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain.svg" width="20%" heigh="20%" align="center">
 </p>
 
 ##### Coming soon
@@ -96,8 +96,8 @@ Boilerplate for different aspects of dev environment
 
 
 <p align="left">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-plain-wordmark.svg" width="15%" heigh="15%" align="center" >
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-plain-wordmark.svg" width="15%" heigh="15%" align="center" >
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-plain-wordmark.svg" width="15%" heigh="15%" align="center" >
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-plain-wordmark.svg" width="15%" heigh="15%" align="center" >
 </p>
 
 [MariaDB](https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb)
@@ -110,7 +110,9 @@ Boilerplate for different aspects of dev environment
 
 <p align="left">
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-plain-wordmark.svg"  width="15%" heigh="15%" align="center" >
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-plain-wordmark.svg" width="15%" heigh="15%" align="center" >
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-plain-wordmark.svg" width="15%" heigh="15%" align="center" >
+	<img src="https://github.com/user-attachments/assets/93862496-65c4-40d5-8f04-f81df9d03458" alt="InfluxDB logo" width="15%" align="center" >
+
 </p>
 
 [MongoDB](https://www.mongodb.com/docs/)
@@ -136,7 +138,7 @@ Boilerplate for different aspects of dev environment
 
 <p align="left">
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" width="15%" heigh="15%" align="center" >
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original-wordmark.svg" width="15%" heigh="15%" align="center" >
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original-wordmark.svg" width="15%" heigh="15%" align="center" >
 </p>
 
  [Jenkins](https://www.jenkins.io/doc/book/)
@@ -155,7 +157,7 @@ Boilerplate for different aspects of dev environment
 ---
 
 <p align="left">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ansible/ansible-original-wordmark.svg" width="30%" heigh="30%" align="center">
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ansible/ansible-original-wordmark.svg" width="30%" heigh="30%" align="center">
 </p>
 
 [Ansible](https://docs.ansible.com/ansible/latest/collections/community/docker/index.html)
