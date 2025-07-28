@@ -1,4 +1,4 @@
-Boilerplate for different aspects of dev environment
+Boilerplate for different aspects of full stack dev environment
 - [Back-End](#back-kend)
 - [Front-End](#front-end)
 - [Database](#database)
@@ -112,7 +112,6 @@ Boilerplate for different aspects of dev environment
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-plain-wordmark.svg"  width="15%" heigh="15%" align="center" >
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-plain-wordmark.svg" width="15%" heigh="15%" align="center" >
 	<img src="https://github.com/user-attachments/assets/93862496-65c4-40d5-8f04-f81df9d03458" alt="InfluxDB logo" width="15%" align="center" >
-
 </p>
 
 [MongoDB](https://www.mongodb.com/docs/)
@@ -120,7 +119,6 @@ Boilerplate for different aspects of dev environment
 
 [Redis](https://redis.io/docs/latest/operate/oss_and_stack/management/config/)
 - Build base image container with config
-
 
 [InfluxDB](https://docs.influxdata.com/)
 - Build base image container with config
@@ -141,7 +139,7 @@ Boilerplate for different aspects of dev environment
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original-wordmark.svg" width="15%" heigh="15%" align="center" >
 </p>
 
- [Jenkins](https://www.jenkins.io/doc/book/)
+[Jenkins](https://www.jenkins.io/doc/book/)
 - Base for App testing
 
 [Gitlab CE](https://docs.gitlab.com/)
