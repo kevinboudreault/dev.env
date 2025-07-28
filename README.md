@@ -71,7 +71,8 @@ Boilerplate for different aspects of full stack dev environment
 - Typescript
 - VueJS
 - ReactJS
-
+- D3.js
+- TreeJS
 
 ---
 
