@@ -82,8 +82,8 @@ Boilerplate for different aspects of full stack dev environment
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain.svg" width="15%" heigh="15%" align="center">
 </p>
 
-HTML boilerplate
-- Html base tags with basic CSS
+[HTML Boilerplate](https://html5boilerplate.com/)
+- Basic html file with basic external CSS
 
 ##### Coming soon
 CSS boilerplate
