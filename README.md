@@ -116,7 +116,7 @@ CSS boilerplate
 <p align="left">
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-plain-wordmark.svg"  width="15%" heigh="15%" align="center" >
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-plain-wordmark.svg" width="15%" heigh="15%" align="center" >
-	<img src="https://github.com/user-attachments/assets/93862496-65c4-40d5-8f04-f81df9d03458" alt="InfluxDB logo" width="15%" align="center" >
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/influxdb/influxdb-original.svg" style="color:#fff" alt="InfluxDB logo" width="15%" align="center" >
 </p>
 
 [MongoDB](https://www.mongodb.com/docs/)
@@ -176,6 +176,8 @@ CSS boilerplate
 ---
 <p align="left">
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" width="15%" heigh="15%" align="center">
+ 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg" width="15%" heigh="15%" align="center">
+	
 </p>
 
 #### Coming soon
