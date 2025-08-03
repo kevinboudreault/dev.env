@@ -4,7 +4,10 @@ Boilerplate for different aspects of full stack dev environment
 - [Database](#database)
 - [CI / CD](#ci/cd)
 - [Automation](#automation)
+- [Queues](#queues)
 - [Tools](#tools)
+
+
 
 
 
@@ -53,6 +56,7 @@ Boilerplate for different aspects of full stack dev environment
 
 [Flask](https://pypi.org/project/Flask/)
 - Development 3.6 [Alpine: virtual-env & Postgres & Flask]
+
 
 
 
@@ -130,6 +134,8 @@ CSS boilerplate
 
 
 
+
+
 ---
 
 # CI/CD
@@ -153,6 +159,7 @@ CSS boilerplate
 
 
 
+
 ---
 
 # Automation
@@ -165,6 +172,28 @@ CSS boilerplate
 
 [Ansible](https://docs.ansible.com/ansible/latest/collections/community/docker/index.html)
 - Base for agentless workflow automation + playbook yaml
+
+
+
+
+
+---
+
+# Queues
+
+---
+
+<p align="left">
+	<img src="ttps://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rabbitmq/rabbitmq-original.svg" width="15%" heigh="15%" align="center">
+</p>
+
+#### Coming soon
+- RabbitMQ
+- Apache Kafka
+- Apache RocketMQ
+- ZeroMQ
+- HiveMQ 
+
 
 
 
