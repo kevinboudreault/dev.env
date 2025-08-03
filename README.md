@@ -184,7 +184,8 @@ CSS boilerplate
 ---
 
 <p align="left">
-	<img src="ttps://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rabbitmq/rabbitmq-original.svg" width="15%" heigh="15%" align="center">
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rabbitmq/rabbitmq-original.svg" width="15%" heigh="15%" align="center">
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachekafka/apachekafka-original.svg" width="15%" heigh="15%" align="center">
 </p>
 
 #### Coming soon
