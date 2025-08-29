@@ -1,0 +1,38 @@
+import os
+from dotenv import load_dotenv
+
+import datetime
+import json
+import requests
+
+load_dotenv()
+
+now = datetime.datetime.now()
+fnow = now.strftime("%Y%m%d_%H")
+
+lat = os.environ['lat']
+lon = os.environ['lon']
+api_key = os.environ['weather_api_key']
+fs_path = os.environ['weather_save_path']
+
+url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={api_key}"
+
+# Check if current hour file exist
+
+isDirExist = os.path.exists(fs_path)
+if not isDirExist:
+    os.makedirs(fs_path)
+
+
+filePath = fs_path + fnow + ".json"
+isFileExist = os.path.exists(filePath)
+print(isFileExist)
+print(filePath)
+
+# if JSON doesnt exist, pull data to create it
+if not isFileExist:
+
+    print(filePath)
+
+#   Call curl to obtain json
+#   Save json to file path
