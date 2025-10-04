@@ -39,4 +39,4 @@ if (not os.path.exists(filePath)) or (os.stat(filePath).st_size == 0) :
     
     # Save json to file path
     with open(filePath, 'w') as jsonFile:
-        jsonFile.write(jsonData)
+        jsonFile.write(json.dumps(jsonData))
