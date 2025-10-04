@@ -1,0 +1,14 @@
+services:
+  controlnode:
+    build:
+      context: control-node/
+      args:
+        ANSIBLE_VERSION: ${ANSIBLE_VERSION}
+    image: ansible:controlnode
+    working_dir: /playbook
+    user: 'root'
+    command: 'tail -f /dev/null'
+    volumes:
+      - ./secrets:/secrets
+      - ./playbook-example:/playbook
+      - /var/run/docker.sock:/var/run/docker.sock:ro
