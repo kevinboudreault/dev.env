@@ -42,6 +42,10 @@ Boilerplate for different aspects of full stack dev environment
  	- [npm,composer,artisan]
   	- [laravel-cron,laravel-queue,laravel-migrate-seed]
 
+##### Coming soon
+- NodeJS
+- Typescript
+
 -----
 
 <p align="left">
@@ -73,7 +77,6 @@ Boilerplate for different aspects of full stack dev environment
 </p>
 
 ##### Coming soon
-- Typescript
 - VueJS
 - ReactJS
 - D3.js
