@@ -43,9 +43,6 @@ Boilerplate for different aspects of full stack dev environment
  	- [npm,composer,artisan]
   	- [laravel-cron,laravel-queue,laravel-migrate-seed]
 
-##### Coming soon
-- NodeJS
-- Typescript
 
 -----
 
@@ -63,8 +60,19 @@ Boilerplate for different aspects of full stack dev environment
 - Development 3.6 [Alpine: virtual-env & Postgres & Flask]
 
 
+-----
+
+<p align="left">
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" width="15%" heigh="15%" align="center">
+</p>
+
+##### Coming soon
+- NodeJS
+- Typescript
 
 
+
+-----
 
 ---
 
