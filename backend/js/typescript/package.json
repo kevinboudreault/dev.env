@@ -1,0 +1,25 @@
+{
+  "name": "boierplate-node-ts",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "boilerplate for app",
+  "main": "index.mjs",
+  "scripts": {
+    "start": "NODE_PATH=./build node build/index.mjs",
+    "build": "tsc -p .",
+    "dev": "nodemon src/index.mts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.6.2",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
