@@ -74,6 +74,19 @@ Boilerplate for different aspects of full stack dev environment
 
 -----
 
+<p align="left">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rails/rails-original-wordmark.svg" width="15%" height="15%" align="center">
+</p>
+
+[Vanilla](https://guides.rubyonrails.org/v7.1/index.html)
+- Development 7.1
+
+#### Coming soon
+- Dev Env 8.0
+
+
+-----
+
 ---
 
 # Front-End
