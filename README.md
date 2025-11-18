@@ -66,8 +66,10 @@ Boilerplate for different aspects of full stack dev environment
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" width="15%" heigh="15%" align="center">
 </p>
 
+[Vanilla](https://nodejs.org/api/index.html)
+- Development 25.2.1 [Alpine: npm, nodejs, python3 & yarn]
+
 ##### Coming soon
-- NodeJS
 - Typescript
 
 
