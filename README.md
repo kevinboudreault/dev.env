@@ -100,8 +100,10 @@ Boilerplate for different aspects of full stack dev environment
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" width="15%" heigh="15%" align="center">
 </p>
 
+[VueJS v3](https://vuejs.org/guide/introduction.html)
+- Development/Production ready with Nginx
+
 ##### Coming soon
-- VueJS
 - ReactJS
 - D3.js
 - TreeJS
