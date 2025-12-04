@@ -1,0 +1,27 @@
+services:
+  vuejs-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: docker-vuejs-prod
+    ports:
+      - "8080:8080"
+
+  vuejs-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    image: docker-vuejs-dev
+    ports:
+      - "5173:5173"
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /app
+
+  vuejs-test:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: ["npm", "run", "test:unit"]
