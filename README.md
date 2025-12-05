@@ -78,7 +78,7 @@ Boilerplate for different aspects of full stack dev environment
 
 
 <p align="left">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ruby/ruby-original-wordmark.svg" width="15%" heigh="15%" align="center">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ruby/ruby-original.svg" width="15%" heigh="15%" align="center">
 </p>
 
 [3.4 Vanilla](https://docs.ruby-lang.org/en/3.4/)
