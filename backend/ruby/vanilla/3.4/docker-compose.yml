@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  web:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: ruby-3.4
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/code
+  redis:
+    image: redis
+
+  db:
+    image: postgres:15
+    container_name: postgres_db
+    environment:
+      POSTGRES_DB: myapp_development
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
