@@ -76,6 +76,15 @@ Boilerplate for different aspects of full stack dev environment
 
 -----
 
+
+<p align="left">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ruby/ruby-original-wordmark.svg" />
+</p>
+
+[3.4 Vanilla](https://docs.ruby-lang.org/en/3.4/)
+- Development 3.4 lts
+
+
 <p align="left">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rails/rails-original-wordmark.svg" width="15%" height="15%" align="center">
 </p>
