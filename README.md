@@ -82,7 +82,7 @@ Boilerplate for different aspects of full stack dev environment
 </p>
 
 [3.4 Vanilla](https://docs.ruby-lang.org/en/3.4/)
-- Development 3.4 lts
+- Development 3.4 lts with Postgres
 
 
 <p align="left">
