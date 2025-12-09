@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  #tested-app:
+  #  build: .
+  #  ports:
+  #    - "8080:8080"
+
+  newman:
+    image: postman/newman:alpine
+    command: run my-collection.json -e my-environment.json
+    volumes:
+      - ./collections:/etc/newman
+      - ./environments:/etc/newman-environments
+  #  depends_on:
+  #    - tested-app
