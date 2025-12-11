@@ -248,6 +248,9 @@ CSS boilerplate
 	
 </p>
 
+[Postman](https://learning.postman.com/docs/introduction/overview/)
+- Base for API testing & debug
+
 #### Coming soon
-- Postman
+
 - SwaggerIO
