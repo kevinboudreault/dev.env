@@ -24,9 +24,14 @@ services:
             context: ./php-fpm
             args:
                 PHP_XDEBUG_MODE: ${PHP_XDEBUG_MODE}
-                PHP_XDEBUG_CLIENT_PORT: ${PHP_XDEBUG_CLIENT_PORT}
-                PHP_XDEBUG_CLIENT_HOST: ${PHP_XDEBUG_CLIENT_HOST}
-                SYMFONY_CLI_VERSION: 5.11.0
+                PHP_VERSION: ${PHP_VERSION}
+                USERNAME: ${USERNAME}
+                GROUPNAME: ${GROUPNAME}
+                UID: ${UID}
+                GID: ${GID}
+                TZ: ${TZ}
+            dockerfile: ./Dockerfile
+        image: ${IMG_NAME}
         ports:
             - "${PHP_PORT}:9001"
         volumes:
