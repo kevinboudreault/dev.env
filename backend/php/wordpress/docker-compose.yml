@@ -1,17 +1,20 @@
 services:
   db:
     image: mariadb:10.6.4-focal
+    # Append '--skip-grant-tables' to login as root without pwd to reset pwd
     command: '--default-authentication-plugin=mysql_native_password'
     volumes:
       - db_data:/var/lib/mysql
     restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=somewordpress
-      - MYSQL_DATABASE=wordpress
-      - MYSQL_USER=wordpress
-      - MYSQL_PASSWORD=wordpress
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PWD:-somewordpress}
+      - MYSQL_DATABASE=${DB_DATABASE:-wordpress}
+      - MYSQL_USER=${DB_USER:-wordpress}
+      - MYSQL_PASSWORD=${DB_PWD:-wordpress}
+    ports:
+      - ${DB_PORT:-3306}:3306      
     expose:
-      - 3306
+      - ${DB_PORT:-3306}
       - 33060
     networks:
       - wp-dev
@@ -21,18 +24,19 @@ services:
     volumes:
       - wp_data:/var/www/html
     ports:
-      - 8089:80
+      - ${WP_PORT:-80}:80
     restart: always
     environment:
-      - WORDPRESS_DB_HOST=db
-      - WORDPRESS_DB_USER=wordpress
-      - WORDPRESS_DB_PASSWORD=wordpress
-      - WORDPRESS_DB_NAME=wordpress
+      - WORDPRESS_DB_HOST=${DB_HOST:-db}
+      - WORDPRESS_DB_USER=${DB_USER:-wordpress}
+      - WORDPRESS_DB_PASSWORD=${DB_PWD:-wordpress}
+      - WORDPRESS_DB_NAME=${DB_DATABASE:-wordpress}
     networks:
       - wp-dev
 
 networks:
   wp-dev:
+    driver: bridge
 
 volumes:
   db_data:
