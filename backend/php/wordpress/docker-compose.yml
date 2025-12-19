@@ -33,6 +33,11 @@ services:
       - WORDPRESS_DB_NAME=${DB_DATABASE:-wordpress}
     networks:
       - wp-dev
+    develop:
+      watch:
+        - path: ./wp-data
+          action: sync
+          target: /var/www/html
 
 networks:
   wp-dev:
