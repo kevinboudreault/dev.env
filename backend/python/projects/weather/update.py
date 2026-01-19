@@ -12,10 +12,12 @@ load_dotenv()
 now = datetime.datetime.now()
 fnow = now.strftime("%Y%m%d_%H")
 
-lat = os.environ['lat']
-lon = os.environ['lon']
-api_key = os.environ['weather_api_key']
-fs_path = os.environ['weather_save_path']
+lat = os.environ.get('lat')
+lon = os.environ.get('lon')
+api_key = os.environ.get('weather_api_key')
+fs_path = os.environ.get('weather_save_path')
+
+print(f"Getting weather for {lat},{lon}")
 
 url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={api_key}"
 
