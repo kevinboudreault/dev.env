@@ -5,9 +5,11 @@ services:
       - "8889:8888"
     stdin_open: true
     tty: true
+    volumes:
+      - .:/opt/notebooks
     command: >
       /bin/bash -c "
-      conda install jupyter -y --quiet &&
+      conda install jupyter numpy pandas matplotlib seaborn scikit-learn scipy -y --quiet &&
       mkdir -p /opt/notebooks &&
       jupyter notebook
       --notebook-dir=/opt/notebooks --ip='*' --port=8888
