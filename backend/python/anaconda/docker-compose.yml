@@ -1,0 +1,14 @@
+services:
+  anaconda:
+    image: continuumio/anaconda3:latest
+    ports:
+      - "8889:8888"
+    stdin_open: true
+    tty: true
+    command: >
+      /bin/bash -c "
+      conda install jupyter -y --quiet &&
+      mkdir -p /opt/notebooks &&
+      jupyter notebook
+      --notebook-dir=/opt/notebooks --ip='*' --port=8888
+      --no-browser --allow-root"
