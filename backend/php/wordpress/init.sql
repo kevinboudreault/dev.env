@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS wp_template;
+CREATE USER IF NOT EXISTS 'wp_admin'@'%' IDENTIFIED BY 'my_password';
+GRANT ALL PRIVILEGES ON wp_template.* TO 'wp_admin'@'%';
+FLUSH PRIVILEGES;
