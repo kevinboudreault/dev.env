@@ -226,8 +226,10 @@ CSS boilerplate
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachekafka/apachekafka-original.svg" width="15%" heigh="15%" align="center">
 </p>
 
+[RabbitMQ](https://www.rabbitmq.com/docs)
+- Open source message broker software (message-oriented middleware) that implements AMQP protocol
+
 #### Coming soon
-- RabbitMQ
 - Apache Kafka
 - Apache RocketMQ
 - ZeroMQ
