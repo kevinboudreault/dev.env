@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  swagger-editor:
+    image: swaggerapi/swagger-editor
+    container_name: "${SWAGGER_EDITOR_NAME:swagger-editor}"
+    ports:
+      - "${SWAGGER_EDITOR_PORT:-8080}:8080"
+    environment:
+      SWAGGER_FILE: /data/swagger.yml
+    volumes:
+      - "${SWAGGER_VOLUME_PATH:-./data}:/data"
+    user: "${SWAGGER_USER_ID:-1000}"
+
+  swagger-ui:
+    image: swaggerapi/swagger-ui
+    container_name: "${SWAGGER_UI_NAME:swagger-ui}"
+    ports:
+      - "${SWAGGER_UI_PORT:-8081}:8080"
+    environment:
+      SWAGGER_JSON: /data/swagger.yml
+    volumes:
+      - "${SWAGGER_VOLUME_PATH:-./data}:/data"
+    user: "${SWAGGER_USER_ID:-1000}"
+
+  swagger-codegen:
+    image: openapitools/openapi-generator-cli
+    container_name: "${SWAGGER_CLI_NAME:swagger-cli}"
+    volumes:
+      - "${SWAGGER_VOLUME_PATH:-./data}:/data"
+    user: "${SWAGGER_USER_ID:-1000}"
+    command: ["help"]
