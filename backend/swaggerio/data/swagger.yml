@@ -1,0 +1,78 @@
+openapi: 3.0.3
+info:
+  title: API Title
+  description: >-
+    A brief description of your API. You can use **Markdown** for formatting,
+    such as bold or lists:
+    - Feature 1
+    - Feature 2
+    - Feature 3
+  version: 1.0.0
+  contact:
+    name: API Support
+    email: support@example.com
+    url: https://example.com/support
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  termsOfService: https://example.com/terms
+
+servers:
+  - url: https://api.example.com/v1
+    description: Production server
+  - url: https://staging-api.example.com/v1
+    description: Staging server
+
+tags:
+  - name: User
+    description: Operations about users
+  - name: Pet
+    description: Operations about pets
+
+paths:
+  /health:
+    get:
+      summary: Health check endpoint
+      description: Returns status OK if the service is running
+      tags:
+        - System
+      responses:
+        '200':
+          description: Service is up and running
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: OK
+
+components:
+  schemas:
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+          example: 404
+        message:
+          type: string
+          example: Not Found
+
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+
+security:
+  - BearerAuth: []
