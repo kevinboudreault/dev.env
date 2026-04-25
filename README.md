@@ -253,6 +253,5 @@ CSS boilerplate
 [Postman](https://learning.postman.com/docs/introduction/overview/)
 - Base for API testing & debug
 
-#### Coming soon
-
-- SwaggerIO
+[SwaggerIO](https://swagger.io/docs/)
+- Enables design, governance, and testing across the full AI-enabled API lifecycle, ensuring quality at every step.
