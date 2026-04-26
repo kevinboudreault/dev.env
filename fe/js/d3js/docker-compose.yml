@@ -1,0 +1,12 @@
+services:
+  d3-app:
+    image: nginx:alpine
+    container_name: d3js_base_image
+    ports:
+      - "${d3js_port:8080}:80"
+    volumes:
+      - .:/usr/share/nginx/html
+    environment:
+      - NODE_ENV=development
+    stdin_open: true
+    tty: true
