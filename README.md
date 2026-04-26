@@ -112,9 +112,11 @@ Boilerplate for different aspects of full stack dev environment
 [VueJS v3](https://vuejs.org/guide/introduction.html)
 - Development/Production ready with Nginx
 
+[D3.js](https://devdocs.io/d3/)
+- JS framework for building custom dynamic visualizations 
+  
 ##### Coming soon
 - ReactJS
-- D3.js
 - TreeJS
 
 ---
