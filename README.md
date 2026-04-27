@@ -231,8 +231,10 @@ CSS boilerplate
 [RabbitMQ](https://www.rabbitmq.com/docs)
 - Open source message broker software (message-oriented middleware) that implements AMQP protocol
 
+[Apache Kafka](https://kafka.apache.org/42/getting-started/introduction/)
+- Distributed event streaming platform for data pipelines, streaming analytics, data integration, and mission-critical applications
+
 #### Coming soon
-- Apache Kafka
 - Apache RocketMQ
 - ZeroMQ
 - HiveMQ 
