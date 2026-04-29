@@ -234,7 +234,7 @@ CSS boilerplate
 [Apache Kafka](https://kafka.apache.org/42/getting-started/introduction/)
 - Distributed event streaming platform for data pipelines, streaming analytics, data integration, and mission-critical applications
 
-[RocketMQ](https://rocketmq.apache.org/docs/quickStart/03quickstartWithDockercompose)
+[Apache RocketMQ](https://rocketmq.apache.org/docs/quickStart/03quickstartWithDockercompose)
 - Cloud-native "messaging, eventing, streaming" real-time data processing platform, covering cloud-edge-device collaboration scenarios
 
 #### Coming soon
