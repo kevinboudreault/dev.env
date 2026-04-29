@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  hivemq:
+    image: hivemq/hivemq4:latest # Use hivemq/hivemq-ce:latest for Community Edition
+    container_name: hivemq-broker
+    ports:
+      - "${HIVEMQ_PORT_MQTT:1883}:1883"
+      - "${HIVEMQ_PORT_WEBUI:8080}:8080"
+      - "${HIVEMQ_PORT_API:8888}:8888"
+      - "${HIVEMQ_PORT_CLUSTER:8000}:8000"
+    environment:
+      # --- Control Center Credentials ---
+      - HIVEMQ_CONTROL_CENTER_USER=${HIVEMQ_WEBUI_USER:admin}
+      - HIVEMQ_CONTROL_CENTER_PASSWORD=${HIVEMQ_WEBUI_PWD:93b84177d643801f92c26d84f4f3479a3219495147988358485292ed0f878f79}
+      
+      # --- Cluster Configuration ---
+      - HIVEMQ_CLUSTER_PORT=${HIVEMQ_CLUSTER_PORT:8000}
+      - HIVEMQ_CLUSTER_TRANSPORT_TYPE=UDP
+      - HIVEMQ_BIND_ADDRESS=${HIVEMQ_CLUSTER_BIND_ADDRESS:0.0.0.0}
+      
+      # --- DNS Discovery (for Clustering) ---
+      - HIVEMQ_DNS_DISCOVERY_ADDRESS=${HIVEMQ_DNS_ADDRESS:hivemq-cluster}
+      - HIVEMQ_DNS_DISCOVERY_INTERVAL=${HIVEMQ_DNS_INTERVAL:31}
+      - HIVEMQ_DNS_DISCOVERY_TIMEOUT=${HIVEMQ_DNS_TIMEOUT:30}
+      
+      # --- Features & APIs ---
+      - HIVEMQ_REST_API_ENABLED=${HIVEMQ_API_ENABLED:true}
+      - HIVEMQ_ALLOW_ALL_CLIENTS=${HIVEMQ_API_ALLOW_ALL:true} # Disables default allow-all extension if false
+      - HIVEMQ_VERBOSE_ENTRYPOINT=${HIVEMQ_API_VERBOSE:false}
+      
+      # --- System & License ---
+      - HIVEMQ_LICENSE=${HIVEMQ_LICENSE} # Base64 encoded license string
+      - HIVEMQ_LOG_LEVEL=${HIVEMQ_LOG_LVL:INFO}
+      - JAVA_OPTS=${HIVEMQ_JAVA_OPTS:-XX:+UnlockExperimentalVMOptions -XX:InitialRAMPercentage=30 -XX:MaxRAMPercentage=80}
+      
+    volumes:
+      - hivemq_data:/opt/hivemq/data
+      - hivemq_log:/opt/hivemq/log
+      - hivemq_conf:/opt/hivemq/conf
+      # - ./license.lic:/opt/hivemq/license/license.lic # Mount license file manually if not using ENV
+
+volumes:
+  hivemq_data:
+  hivemq_log:
+  hivemq_conf:
+
