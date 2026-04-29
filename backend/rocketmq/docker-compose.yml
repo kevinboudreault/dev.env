@@ -1,0 +1,42 @@
+version: '3.8'
+services:
+  rmq-server:
+    image: apache/rocketmq:5.3.2
+    container_name: rockermq-server
+    ports:
+      - ${ROCKERMQ_PORT:9876}:9876
+    networks:
+      - rocketmq
+    command: sh mqnamesrv
+
+  rmq-broker:
+    image: apache/rocketmq:5.3.2
+    container_name: rockermq-broker
+    ports:
+      - ${ROCKERMQ_BROKER_PORT_1:10909}:10909
+      - ${ROCKERMQ_BROKER_PORT_2:10911}:10911
+      - ${ROCKERMQ_BROKER_PORT_3:10912}:10912
+    environment:
+      - ROCKERMQ_BROKER_ADDR=rmqnamesrv:9876
+    depends_on:
+      - namesrv
+    networks:
+      - rocketmq
+    command: sh mqbroker
+
+  rmq-proxy:
+    image: apache/rocketmq:5.3.2
+    container_name: rockermq-proxy
+    ports:
+      - ${ROCKERMQ_PROXY_PORT_1:8080}:8080
+      - ${ROCKERMQ_PROXY_PORT_2:8081}:8081
+    depends_on:
+      - rmq-broker
+      - rmq-server
+    networks:
+      - rocketmq
+    command: sh mqproxy
+
+networks:
+  rocketmq:
+    driver: bridge
