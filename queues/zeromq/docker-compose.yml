@@ -1,0 +1,43 @@
+version: "3.8"
+
+services:
+  publisher:
+    build:
+      context: ./publisher
+      dockerfile: Dockerfile
+    container_name: zmq_publisher
+    restart: unless-stopped
+    expose:
+      - "5556"
+    networks:
+      - zmq_net
+
+  subscriber_1:
+    build:
+      context: ./subscriber
+      dockerfile: Dockerfile
+    container_name: zmq_subscriber_1
+    restart: unless-stopped
+    environment:
+      - SUBSCRIBER_ID=1
+    networks:
+      - zmq_net
+    depends_on:
+      - publisher
+
+  subscriber_2:
+    build:
+      context: ./subscriber
+      dockerfile: Dockerfile
+    container_name: zmq_subscriber_2
+    restart: unless-stopped
+    environment:
+      - SUBSCRIBER_ID=2
+    networks:
+      - zmq_net
+    depends_on:
+      - publisher
+
+networks:
+  zmq_net:
+    driver: bridge

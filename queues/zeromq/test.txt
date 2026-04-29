@@ -1,0 +1,14 @@
+docker logs zmq_publisher --tail 10
+
+docker logs zmq_subscriber_1 --tail 10
+
+# Test ZeroMQ port from inside the network
+docker exec zmq_subscriber_1 python3 -c "
+import zmq
+ctx = zmq.Context()
+s = ctx.socket(zmq.SUB)
+s.connect('tcp://publisher:5556')
+s.setsockopt_string(zmq.SUBSCRIBE, '')
+msg = s.recv_string(flags=zmq.NOBLOCK)
+print('Received:', msg)
+"
