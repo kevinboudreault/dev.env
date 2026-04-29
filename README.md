@@ -240,8 +240,8 @@ CSS boilerplate
 [ZeroMQ](https://zeromq.org/get-started/)
 - High-performance asynchronous messaging library, aimed at use in distributed or concurrent applications
 
-#### Coming soon
-- HiveMQ 
+[HiveMQ](https://docs.hivemq.com/hivemq/latest/user-guide/index.html)
+- Scalable IoT/IIoT messaging.
 
 
 
