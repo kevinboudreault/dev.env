@@ -109,14 +109,16 @@ Boilerplate for different aspects of full stack dev environment
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" width="15%" heigh="15%" align="center">
 </p>
 
+[D3.js](https://devdocs.io/d3/)
+- JS framework for building custom dynamic visualizations 
+
+[ReactJS](https://react.dev/reference/react)
+- open-source JavaScript library for building user interfaces / SPA
+
 [VueJS v3](https://vuejs.org/guide/introduction.html)
 - Development/Production ready with Nginx
 
-[D3.js](https://devdocs.io/d3/)
-- JS framework for building custom dynamic visualizations 
-  
 ##### Coming soon
-- ReactJS
 - TreeJS
 
 ---
