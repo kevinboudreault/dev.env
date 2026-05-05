@@ -1,0 +1,16 @@
+ARG NODE_VERSION=24.12.0-alpine
+ARG PORT=5173
+
+FROM node:${NODE_VERSION} AS dev
+
+WORKDIR /app
+
+COPY ./my-react-app/package.json package-lock.json* ./
+
+RUN --mount=type=cache,target=/root/.npm npm install
+
+COPY ./my-react-app/ .
+
+EXPOSE ${PORT}
+
+CMD ["npm", "run", "dev"]
