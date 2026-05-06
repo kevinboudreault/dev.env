@@ -113,13 +113,14 @@ Boilerplate for different aspects of full stack dev environment
 - JS framework for building custom dynamic visualizations 
 
 [ReactJS](https://react.dev/reference/react)
-- open-source JavaScript library for building user interfaces / SPA
+- Open-source JavaScript library for building user interfaces / SPA
+
+[ThreeJS](https://threejs.org/docs/)
+- Library used to create and display animated 3D computer graphics in web browsers using WebGL.
 
 [VueJS v3](https://vuejs.org/guide/introduction.html)
-- Development/Production ready with Nginx
+- Open-source JavaScript library for building user interfaces / SPA
 
-##### Coming soon
-- TreeJS
 
 ---
 
