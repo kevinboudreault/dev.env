@@ -1,0 +1,15 @@
+services:
+  threejs-app:
+    container_name: threejs-app
+    build: 
+      context: .
+      args:
+        - APP_PORT=${APP_PORT:5173}
+    ports:
+      - "${APP_PORT:5173}:$(APP_PORT:5173}"
+    volumes:
+      - ./app/:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - APP_PORT=${APP_PORT:5173}
