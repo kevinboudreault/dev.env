@@ -1,15 +1,19 @@
 services:
   ts-node-docker:
+    container_name: ts-node-docker
     build:
       context: .
       dockerfile: Dockerfile
       target: base
+      args:
+        - APP_PORT=${APP_PORT:4321}
     volumes:
-      - ./src:/home/node/app/src
-      - ./nodemon.json:/home/node/app/nodemon.json
-    container_name: ts-node-docker
+      - ./app:/home/node/app
+      - ./app/nodemon.json:/home/node/app/nodemon.json
     expose:
-      - '4321'
+      - '${APP_PORT:4321}'
     ports:
-      - '4321:4000'
+      - '${APP_PORT:4321}:4000'
+    environment:
+      - APP_PORT=${APP_PORT:4321}
     command: npm run dev
