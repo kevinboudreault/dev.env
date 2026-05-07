@@ -69,8 +69,8 @@ Boilerplate for different aspects of full stack dev environment
 [NodeJS](https://nodejs.org/api/index.html)
 - Development 25.2.1 [Alpine: npm, nodejs, python3 & yarn]
 
-##### Coming soon
-- Typescript
+[Typescript](https://www.typescriptlang.org/docs/)
+- Statically typed superset of JavaScript developed by Microsoft
 
 
 
