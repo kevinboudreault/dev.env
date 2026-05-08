@@ -1,4 +1,6 @@
-.env
+*.env
 node_modules/
 wp-data/
 wp-db/
+*.sublime-*
+.obsidian
