@@ -86,14 +86,29 @@ def extract_card_data(card_soup: BeautifulSoup) -> Optional[Dict]:
         if phone_match:
             result["phone"] = clean_phone(phone_match.group(1))
 
-    # Clean and extract address sequences (looking for common indicators like 'ON' or Postal Codes)
-    text_content = card_soup.get_text(separator="\n")
-    for line in text_content.split("\n"):
-        line_clean = line.strip()
-        # Look for lines containing Ontario locations or Postal Codes matching Kxx xxx
-        if " ON " in line_clean or " Ontario " in line_clean or re.search(r'[A-Za-z]\d[A-Za-z]\s?\d[A-Za-z]\d', line_clean):
-            result["address"] = clean_text(line_clean)
-            break
+    # --- Precise Microdata Address Extraction ---
+    # Try locating the structured microdata street elements inside the card
+    street_span = card_soup.find(attrs={"itemprop": "streetAddress"})
+    city_zip_div = card_soup.find(attrs={"itemprop": "citystatezip"})
+
+    if street_span and city_zip_div:
+        # Extract and scrub individual pieces
+        street = clean_text(street_span.get_text())
+        
+        # Collapse internal spacing for items inside citystatezip (City, Province, Postal)
+        city_zip_text = clean_text(city_zip_div.get_text())
+        
+        if street and city_zip_text:
+            result["address"] = f"{street}, {city_zip_text}"
+            
+    # Fallback to older text line tracking mechanism if microdata wrappers missing
+    if not result["address"]:
+        text_content = card_soup.get_text(separator="\n")
+        lines = [line.strip() for line in text_content.split("\n") if line.strip()]
+        for line in lines:
+            if " ON " in line or " Ontario " in line or re.search(r'[A-Za-z]\d[A-Za-z]\s?\d[A-Za-z]\d', line):
+                result["address"] = clean_text(line)
+                break
 
     return result
 
