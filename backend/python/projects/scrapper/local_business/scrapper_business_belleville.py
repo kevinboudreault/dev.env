@@ -66,7 +66,7 @@ def get_response_text(url: str) -> str:
 
 def extract_card_data(card_soup: BeautifulSoup) -> Optional[Dict]:
     """Extracts name, phone, and address from a single business card block."""
-    result = {"name": None, "phone": None, "address": None}
+    result = {"name": None, "phone": None, "address": None, "website": None }
 
     # Find the title element (usually an h5 with gz-card-title)
     title_tag = card_soup.find("h5", class_="gz-card-title") or card_soup.find("h5")
@@ -108,6 +108,23 @@ def extract_card_data(card_soup: BeautifulSoup) -> Optional[Dict]:
         for line in lines:
             if " ON " in line or " Ontario " in line or re.search(r'[A-Za-z]\d[A-Za-z]\s?\d[A-Za-z]\d', line):
                 result["address"] = clean_text(line)
+                break
+
+    # --- Precise Website Extraction ---
+    # Target the layout wrapper element directly
+    website_container = card_soup.find(class_="gz-card-website")
+    if website_container:
+        web_link = website_container.find("a")
+        if web_link and web_link.get("href"):
+            result["website"] = web_link.get("href").strip()
+
+    # Fallback: Look across all anchor cards using GrowthZone script onclick event metrics
+    if not result["website"]:
+        all_links = card_soup.find_all("a", href=True)
+        for link in all_links:
+            onclick_attr = link.get("onclick", "")
+            if "MemberWebsite" in onclick_attr:
+                result["website"] = link.get("href").strip()
                 break
 
     return result
