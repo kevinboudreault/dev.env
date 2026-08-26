@@ -3,12 +3,13 @@ from typing import Dict, List, Optional
 from bs4 import BeautifulSoup
 from urllib3.util.retry import Retry
 from requests.adapters import HTTPAdapter
+from dotenv import load_dotenv
 
 # --------------------------------------------------------------------- # 
 # 0. CONSTANTS                                                          #
 # --------------------------------------------------------------------- # 
 
-DEFAULT_URL = "https://business.bellevillechamber.ca/list/search?q=&c=&sa=False&gr=310.6855&gn="
+load_dotenv()
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36",
     "Accept-Language": "en-US,en;q=0.9",
@@ -161,7 +162,7 @@ def scrape_directory(url: str) -> List[Dict]:
 # --------------------------------------------------------------------- # 
 
 def main() -> None:
-    target_url = os.getenv("BELLEVILLE_URL", DEFAULT_URL)
+    target_url = os.getenv("SCRAPE_URL")
     LOGGER.info(f"Starting directory scrape process on: {target_url}")
     
     businesses = scrape_directory(target_url)
