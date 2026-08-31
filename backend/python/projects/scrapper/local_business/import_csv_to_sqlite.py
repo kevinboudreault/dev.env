@@ -1,27 +1,6 @@
 import csv, sqlite3, logging, os
 from db import main as database
 
-def get_connection(db_path: str) -> sqlite3.Connection:
-    # Connect to the SQLite database and create the schema if it doesn't exist.
-    conn  = sqlite3.connect(db_path)
-    
-    try:
-        cur   = conn.cursor()
-        cur.execute("""CREATE TABLE IF NOT EXISTS businesses (
-            id          INTEGER PRIMARY KEY AUTOINCREMENT,
-            name        TEXT   NOT NULL,
-            phone       TEXT   ,
-            address     TEXT   ,
-            website     TEXT   ,
-            created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            updated_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        )""")
-    except Exception as e:
-        logging.warning(f"Table already existed — skipping CREATE: {e}")
-    
-    conn.commit()
-    return conn
-
 
 def import_csv(db_path: str, csv_file: str) -> int:
     # Setup Logging
@@ -33,7 +12,7 @@ def import_csv(db_path: str, csv_file: str) -> int:
         logging.error(f"CSV file missing at : {os.path.abspath(csv_file)}")
         return 0
     
-    conn   = get_connection(db_path)
+    conn   = db.get_connection(db_path)
     cur    = conn.cursor()
     
     records: list[dict] = []
