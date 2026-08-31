@@ -27,12 +27,10 @@ def create_db(db_name: string="businesses.db", create_only: bool=true):
 def get_connection(db_path: str) -> sqlite3.Connection:
     # Check if db already exist
     create_db()
-
-    # Connect to the SQLite database and create the schema if it doesn't exist.
-    conn = sqlite3.connect(db_path)
     
     try:
-        cur = conn.cursor()
+        # Connect to the SQLite database and create the schema if it doesn't exist.
+        conn = sqlite3.connect(db_path)
     except Exception as e:
         logging.warning(f"Error trying to connect to db: {e}")
 

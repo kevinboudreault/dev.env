@@ -12,8 +12,8 @@ def import_csv(db_path: str, csv_file: str) -> int:
         logging.error(f"CSV file missing at : {os.path.abspath(csv_file)}")
         return 0
     
-    conn   = db.get_connection(db_path)
-    cur    = conn.cursor()
+    conn = db.get_connection(db_path)
+    cur = conn.cursor()
     
     records: list[dict] = []
 
