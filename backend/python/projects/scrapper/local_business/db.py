@@ -25,24 +25,17 @@ def create_db(db_name: string="businesses.db", create_only: bool=true):
             conn.close()
 
 def get_connection(db_path: str) -> sqlite3.Connection:
+    # Check if db already exist
+    create_db()
+
     # Connect to the SQLite database and create the schema if it doesn't exist.
-    conn  = sqlite3.connect(db_path)
+    conn = sqlite3.connect(db_path)
     
     try:
-        cur   = conn.cursor()
-        cur.execute("""CREATE TABLE IF NOT EXISTS businesses (
-            id          INTEGER PRIMARY KEY AUTOINCREMENT,
-            name        TEXT   NOT NULL,
-            phone       TEXT   ,
-            address     TEXT   ,
-            website     TEXT   ,
-            created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            updated_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        )""")
+        cur = conn.cursor()
     except Exception as e:
-        logging.warning(f"Table already existed — skipping CREATE: {e}")
-    
-    conn.commit()
+        logging.warning(f"Error trying to connect to db: {e}")
+
     return conn
 
 if __name__ == "__main__":
