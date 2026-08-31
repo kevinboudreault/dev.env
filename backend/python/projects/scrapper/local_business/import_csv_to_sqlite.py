@@ -1,5 +1,5 @@
 import csv, sqlite3, logging, os
-from db import main as database
+from db import get_connection
 
 
 def import_csv(db_path: str, csv_file: str) -> int:
@@ -12,7 +12,7 @@ def import_csv(db_path: str, csv_file: str) -> int:
         logging.error(f"CSV file missing at : {os.path.abspath(csv_file)}")
         return 0
     
-    conn = db.get_connection(db_path)
+    conn = get_connection(db_path)
     cur = conn.cursor()
     
     records: list[dict] = []
