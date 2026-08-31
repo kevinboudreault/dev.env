@@ -1,12 +1,11 @@
 import sqlite3
 
+def create_db(db_name: string="businesses.db", create_only: bool=true):
+    conn = sqlite3.connect(db_name)
 
-def main():
-    conn = sqlite3.connect('businesses.db')
-    
     try:
         cursor = conn.cursor()
-        
+
         # Create table
         cursor.execute('''CREATE TABLE IF NOT EXISTS businesses (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -17,13 +16,13 @@ def main():
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )''')
-        
+
     except sqlite3.Error as e:
         print(f"An error occurred: {e}")
-    
-    finally:
-        conn.close()
 
+    finally:
+        if create_only:
+            conn.close()
 
 if __name__ == "__main__":
-    main()
+    create_db()

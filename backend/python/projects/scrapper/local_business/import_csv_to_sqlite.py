@@ -1,5 +1,5 @@
 import csv, sqlite3, logging, os
-
+from db import main as database
 
 def get_connection(db_path: str) -> sqlite3.Connection:
     # Connect to the SQLite database and create the schema if it doesn't exist.
