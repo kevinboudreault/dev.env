@@ -1,5 +1,5 @@
 import os, sqlite3
-from typing import Optional
+from typing import Any, Dict, List, Optional
 from fastapi import FastAPI, Query, HTTPException, Depends
 from pydantic import BaseModel, Field
 
@@ -39,8 +39,21 @@ class BusinessResponse(PydanticBaseModel):
     created_at: Optional[str] = None
 
 
-class ErrorResponse(PydanticBaseModel):
-    error: str
+class ValidationErrorDetail(BaseModel):
+    loc: List[str] = Field(..., description="The path to the error field.")
+    msg: str = Field(..., description="The error message.")
+    type: str = Field(..., description="The type of error (e.g., value_error.missing).")
+
+class ErrorDetails(BaseModel):
+    code: str = Field(..., description="A unique, machine-readable error code (e.g., USER_NOT_FOUND).")
+    message: str = Field(..., description="A customer-facing error message.")
+    validation_errors: Optional[List[ValidationErrorDetail]] = Field(
+        None, 
+        description="Detailed list of field validation errors, if applicable."
+    )
+
+class ErrorResponse(BaseModel):
+    error: ErrorDetails
 
 
 @app.get("/businesses")
