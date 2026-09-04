@@ -1,6 +1,6 @@
 import sqlite3
 
-def create_db(db_name: string="businesses.db", create_only: bool=true):
+def create_db(db_name: string="businesses.db", create_only: bool=True):
     conn = sqlite3.connect(db_name)
 
     try:
@@ -37,4 +37,4 @@ def get_connection(db_path: str) -> sqlite3.Connection:
     return conn
 
 if __name__ == "__main__":
-    create_db()
+    get_connection()
