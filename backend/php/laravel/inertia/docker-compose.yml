@@ -1,0 +1,59 @@
+services:
+  db:
+    image: mysql:8.0
+    command: ["--default-authentication-plugin=mysql_native_password"]
+    restart: unless-stopped
+    ports:
+      - "${MYSQL_TCP_PORT}:3306"
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_DEBUG: ${MYSQL_DEBUG}
+      MYSQL_HOME: ${MYSQL_HOME}
+      MYSQL_HOST: ${MYSQL_HOST}
+      MYSQL_TCP_PORT: ${MYSQL_TCP_PORT}
+      MYSQL_UNIX_PORT: ${MYSQL_UNIX_PORT}
+      TZ: ${TZ}
+    volumes:
+      - ./db:/var/lib/mysql
+    networks:
+      - app-network      
+
+  app:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+      args:
+        - PHP_XDEBUG_MODE: ${PHP_XDEBUG_MODE:-off}
+        - PHP_VERSION: ${PHP_VERSION}
+    image: laravel-inertia-app
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - .:/var/www
+    extra_hosts:
+      - "host.docker.internal:host-gateway" 
+    networks:
+      - app-network
+    depends_on:
+      - db
+
+  web:
+    image: nginx:alpine
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www
+      - ./docker/nginx:/etc/nginx/conf.d/
+    networks:
+      - app-network
+    depends_on:
+      - app
+
+
+networks:
+  app-network:
+    driver: bridge
