@@ -1,0 +1,46 @@
+# Git
+.git
+.gitattributes
+.gitignore
+
+# Environment / sensitive data
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+vendor/
+node_modules/
+composer.lock
+package-lock.json
+yarn-error.log
+.pnp.cjs
+.yarn/install-state.gz
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs & runtime data
+storage/logs/*.log
+bootstrap/cache/*.phpunit.xml
+npm-debug.log
+npm-debug.*.log
+
+# Docker related
+.docker
+Dockerfile
+docker-compose*.yml
+*.yml.in
+
+# Testing artifacts
+tests/Report/*
+tests/Pest/Reports/*
+coverage
+
+# Misc
+!.env.example
+!coverage
