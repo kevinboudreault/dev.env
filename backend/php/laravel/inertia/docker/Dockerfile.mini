@@ -1,0 +1,38 @@
+# ============================================================
+# Stage: builder — installs PHP + Node, compiles extensions
+# ============================================================
+ARG PHP_VERSION="8.3-fpm"
+FROM php:${PHP_VERSION} AS builder
+
+ARG UID=1000
+ARG GID=1000
+
+RUN apt-get update && apt-get install -y \
+    git curl libpng-dev libonig-dev libxml2-dev zip unzip && \
+    docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd \
+    && pecl install xdebug \
+    && mkdir /var/log/xdebug && chown -R ${UID}:${GID} /var/log/xdebug \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+ENV USER_ID=${UID} GROUP_ID=${GID} XDEBUG_MODE=""
+
+COPY docker/composer.json /var/www/
+WORKDIR /var/www
+
+ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["php-fpm"]
+
+
+# ============================================================
+# Stage: runtime — slim runtime, shares layers with builder
+# COPY FROM builder ensures shared node/git/tooling cache.
+# ============================================================
+FROM builder AS app
+
+USER ${UID}:${GID}
+
+COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
+
+
+ENTRYPOINT ["./docker/docker-entrypoint.sh"]
+CMD ["php-fpm"]
