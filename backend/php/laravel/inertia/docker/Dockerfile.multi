@@ -1,0 +1,96 @@
+# ============================================================
+# Stage: php-base — pulls official PHP+extensions base image
+# Does NOT have system tools or Node yet — kept extremely small (~125MB).
+# ============================================================
+ARG PHP_VERSION="8.3-fpm"
+FROM php:${PHP_VERSION}-fpm AS php-base
+
+ARG USER_ID=1000
+ARG GROUP_ID=1000
+
+RUN apt-get update && apt-get install -y \
+    git curl libpng-dev libonig-dev libxml2-dev zip unzip \
+    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd \
+    && pecl install xdebug \
+    && mkdir /var/log/xdebug && chmod 755 /var/log/xdebug \
+    && chown ${USER_ID}:${GROUP_ID} /var/log/xdebug \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+ENV PG_CACHE_DIR=/app/.composer/pgcache TZ=${TZ}
+
+
+# ============================================================
+# Stage: node — installs Node 20 binaries from official container.
+# Layer shared by both builder and runtime stages.
+# Uses tar extraction to minimize noise (avoids huge node:latest tag).
+# ============================================================
+FROM php-base AS node-stage
+
+ARG NODE_VERSION=20
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends ca-certificates gnupg lsb-release procps util-linux xz-utils xz-utils tzdata && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /tmp
+
+ARG NODE_VERSION=20
+RUN curl -fsSL https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.xz | tar -xJf - || \
+    curl -fsLf "${NODE_DOWNLOAD_URL:?}" "v${NODE_VERSION}.tar.xz" | tar -xJf - --strip-components=1
+
+RUN rm -rf /tmp/node*
+
+
+# ============================================================
+# Stage: builder — pulls Composer, binds Xdebug config (if present),
+# enables xdebug according to PHP_XDEBUG_MODE if mode == "debug",
+# else skips and leaves a harmless placeholder env variable.
+# This layer contains the whole OS + PHP deps + Node binary cache;
+# it is only rebuilt when those dependencies change.
+# ============================================================
+FROM node-stage AS builder
+
+ARG XDEBUG_CLIENT_PORT=9003 \
+    XDEBUG_CLIENT_HOST="host.docker.internal" \
+    XDEBUG_IDE_KEY="DOCKER"
+
+# Composer installs its own system libs; we pin to release tarball.
+RUN curl --fail -L "https://github.com/composer/package-versions-deprecated/releases/latest/download/composer.phar" -o /usr/local/bin/composer && chmod +x /usr/local/bin/composer \
+    || curl --fail -fsSL -O https://github.com/composer/getcomposer.org/raw/develop/phpstan/composer-runtime-checker/composer.phar && \
+    chmod +x composer.phar && mv composer.phar /usr/local/bin/composer
+
+COPY ./docker/xdebug.config /tmp/xdebug.config.dist
+
+ENV PHP_XDEBUG_CONFIG_PATH=/var/www/.env.app.docker.xdebug
+
+
+# --- Xdebug branch: conditional env-based toggle — identical to original ---
+ARG PHP_XDEBUG_MODE=""
+
+RUN if [ "${PHP_XDEBUG_MODE}" = "debug" ]; then \
+        cat /tmp/xdebug.config.dist >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && rm -f /tmp/xdebug.config.dist; \
+    else \
+        echo "# xdebug not loaded — set PHP_XDEBUG_MODE=debug to enable" > /etc/php/8.3/fpm/conf.d/${USER_ID}/99-no-xdebug.ini 2>/dev/null || true; \
+        touch /usr/local/etc/php/conf.d/disable-xdebug-no-op && chmod +x /usr/local/etc/php/conf.d/disable-xdebug-no-op; \
+    fi
+
+
+# === Final stage: runtime — shares the heavy OS+PHP deps from builder,
+#       just adds user files and copies app code.  Same entrypoint as orig. ===
+FROM docker-image AS run
+
+ARG EXPOSE=9000
+WORKDIR /var/www
+
+COPY --from=builder /usr/local/bin/composer composer-local \
+    && COPY --from=node-stage /tmp/node binaries /var/www/.local \
+    && RUN chmod +x /var/www/composer-local && ln -sf /var/www/composer-local /var/www/.composer 2>/dev/null || true
+
+USER ${USER_ID}:${GROUP_ID}
+
+EXPOSE ${EXPOSE:9000}
+
+COPY --chown=${USER_ID}:${GROUP_ID} . ./
+COPY --from=builder --chown=${USER_ID}:${GROUP_ID} ${BUILD_CONTEXT:-/docker} /var/www/docker
+
+VOLUME ["./app/public/storage", "./.env"]
+ENTRYPOINT ["/usr/local/bin/composer-local"]
