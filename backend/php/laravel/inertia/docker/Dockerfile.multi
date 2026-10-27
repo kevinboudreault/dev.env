@@ -2,7 +2,7 @@
 # Stage: php-base — pulls official PHP+extensions base image
 # Does NOT have system tools or Node yet — kept extremely small (~125MB).
 # ============================================================
-ARG PHP_VERSION="8.3-fpm"
+ARG PHP_VERSION="8.3.36-fpm"
 FROM php:${PHP_VERSION}-fpm AS php-base
 
 ARG USER_ID=1000
