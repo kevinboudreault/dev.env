@@ -18,13 +18,12 @@ services:
             TZ: ${TZ}
         volumes:
             - ./db:/var/lib/mysql
-
     php:
         build:
             context: ./php-fpm
             args:
                 PHP_XDEBUG_MODE: ${PHP_XDEBUG_MODE}
-                PHP_VERSION: ${PHP_VERSION}
+                PHP_VERSION: ${PHP_VERSION} # PHP2Shell patched 8.2.35-fpm
                 USERNAME: ${USERNAME}
                 GROUPNAME: ${GROUPNAME}
                 UID: ${UID}
@@ -39,7 +38,6 @@ services:
             - ./logs/symfony:/var/www/symfony/var/log:cached
         depends_on:
             - db
-
     phpmyadmin:
         image: phpmyadmin:latest
         environment:
