@@ -1,10 +1,10 @@
-FROM php:8.4-cli
+FROM php:php:8.4.27-cli
 
 ARG UID=1000
 ARG GID=1000
 
 # Dependencies
-RUN echo "force-unsafe-io" > etc/dpkg/dpkg.cfg.d/02apt-speedup \
+RUN echo "force-unsafe-io" > /etc/dpkg/dpkg.cfg.d/02apt-speedup \
     && echo "Acquire::http {No-Cache=True;};" > /etc/apt/apt.conf.d/no-cache \
     && apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends --quiet \

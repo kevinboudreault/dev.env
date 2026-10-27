@@ -1,4 +1,4 @@
-FROM php:7.4-cli
+FROM php:7.4-cli #unpatched for PHP2Shell
 
 ARG UID=1000
 ARG GID=1000

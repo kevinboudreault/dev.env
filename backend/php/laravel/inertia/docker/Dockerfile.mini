@@ -1,7 +1,7 @@
 # ============================================================
 # Stage: builder — installs PHP + Node, compiles extensions
 # ============================================================
-ARG PHP_VERSION="8.3-fpm"
+ARG PHP_VERSION="8.3.36-fpm"
 FROM php:${PHP_VERSION} AS builder
 
 ARG UID=1000
